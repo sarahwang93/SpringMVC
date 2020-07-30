@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:border="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>DashBoard</title>
+    <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+    <script>
+        function initViz() {
+            url = "https://public.tableau.com/views/Assignment1_15625243544620/Sheet1?:display_count=y&:origin=viz_share_link",
+                options = {
+                    hideToolbar: true,
+                    width: "50%",
+                    height: "400px",
+                };
+            viz = new tableau.Viz(assignment, url, options);
+        }
+    </script>
+<head>
+
+
+<body onload="initViz();">
+    <div id="assignment"></div>
+</body>
+
+</html>

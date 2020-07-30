@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#login_form").click(function(){
+                var loginData = {};
+                loginData["email"] = $("#username").val();
+                loginData["password"] = $("#password").val();
+
+            var data = JSON.stringify(loginData);
+            $.ajax({
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                url: "/user/login_validate",
+                data: data,
+                success: function () {
+                    alert("success");
+                },
+                error: function () {
+                    alert("login failed");
+                }
+            })
+        })
+        })
+    </script>
+
+</head>
+
+<body>
+    <div class="form-group">
+        <h3>Login Page</h3>
+        <form object="${user}" class="form-signin">
+            <label>Email:</label>
+            <input type="text" class="form-control" id="username" placeholder="Email Address" required="" autofocus="" />
+            <p>
+            </p>
+            <label>Password:</label>
+            <input type="password" class="form-control" id="password" placeholder="Password" required=""/>
+            <p>
+            </p>
+            <div class="checkbox">
+                <label><input type="checkbox" value="remember-me" name="rememberMe"> Remember me</label>
+            </div>
+            <p>
+            </p>
+            <button id="login_form" class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>

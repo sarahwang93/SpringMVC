@@ -1,0 +1,31 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.17.3/libexec/bin/yarn.js global bin
+
+PATH: 
+  /bin:/Users/sarah.wang/Server/spark-2.3.3-bin-hadoop2.7:/Users/sarah.wang/Server/spark-2.3.3-bin-hadoop2.7/bin:/Users/sarah.wang/Server/spark-2.3.3-bin-hadoop2.7/sbin:/bin:/Users/sarah.wang/Server/sbt/bin:/Users/sarah.wang/Server/sbt/lib:/Users/sarah.wang/Server/scala-2.11.12/bin:/Users/sarah.wang/Server/scala-2.11.12/lib:/Users/sarah.wang/.rvm/gems/ruby-2.4.3/bin:/Users/sarah.wang/.rvm/gems/ruby-2.4.3@global/bin:/Users/sarah.wang/.rvm/rubies/ruby-2.4.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Users/sarah.wang/.rvm/bin:/Users/sarah.wang/tools/spark-2.3.3-bin-hadoop2.7/bin:/usr/local/Cellar/mongodb-community-shell/4.2.0/bin:/Users/sarah.wang/.rvm/bin
+
+Yarn version: 
+  1.17.3
+
+Node version: 
+  10.16.3
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/sarah.wang/IdeaProjects/demo/package.json: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.17.3/libexec/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.17.3/libexec/lib/cli.js:304:30)
+      at /usr/local/Cellar/yarn/1.17.3/libexec/lib/cli.js:315:13
+
+npm manifest: 
+  
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

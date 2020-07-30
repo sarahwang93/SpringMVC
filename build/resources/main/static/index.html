@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/2005/Atom" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="User account registration" />
+    <meta name="author" content="Amir Boroumand" />
+    <link rel="icon" href="favicon.ico" />
+
+    <title>Registration Page</title>
+
+    <!-- Bootstrap core CSS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="jQuery-serializer.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous" />
+    <link th:href="@{css/style.css}" rel="stylesheet" />
+    <script>
+        $(document).ready(function(){
+            $("#myform").click(function(){
+                 var userData = {};
+                 userData["id"] = $("#id").val();
+                 userData["firstName"] = $("#firstName").val();
+                 userData["lastName"] = $("#lastName").val();
+                 userData["email"] = $("#email").val();
+                 userData["password"] = $("#password").val();
+
+                 var gfg = JSON.stringify(userData);
+
+                 alert(gfg);
+                 $.ajax({
+                        type: "POST",
+                        contentType: "application/json;charset=utf-8",
+                        url: "/user/add",
+                        data: gfg,
+                        success:function(){
+                            alert("success");
+                        }
+                     });
+                 });
+              });
+     </script>
+
+</head>
+<body class="gray-bg">
+
+    <div class="middle-box text-center loginscreen animated fadeInDown">
+        <div>
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed"
+                                data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                                aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span> <span
+                                class="icon-bar"></span> <span class="icon-bar"></span> <span
+                                class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#" th:href="@{/}">Registration and
+                            Login Module</a>
+                    </div>
+                </div>
+            </nav>
+        <div>
+            <br>
+            <br>
+        </div>
+        <p>
+        </p>
+        <div>
+            <br>
+            <br>
+        </div>
+        <form id="userdata" object="${user}" class = "form-inline" role = "form">
+                <label for="id" class="control-label" >Id</label>
+                <input th:field="*{user.id}" id="id" type="text" />
+                <p>
+                </p>
+                <label for="firstName" class="control-label" >First Name</label>
+                <input th:field="*{user.firstName}" id="firstName" type="text" />
+                <p>
+                </p>
+                <label for="lastName" class="control-label">Last Name</label>
+                <input th:field="*{user.lastname}" id="lastName" type="text" />
+                <p>
+                </p>
+                <label for="email" class="control-label">Email</label>
+                <input th:field="*{user.email}" id="email" type="text" />
+                <p>
+                </p>
+                <label for="password" class="control-label">Password</label>
+                <input th:field="*{user.password}" id="password" type="text" />
+                <p>
+                </p>
+                <button id="myform" type="submit" class="btn btn-success btn-send">Register</button>
+                <span>Already registered? <a href="/user/login">Login here</a></span>
+                <p>
+                </p>
+                <span>No login access <a href="/main">Main Page</a></span>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
