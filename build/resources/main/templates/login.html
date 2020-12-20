@@ -16,8 +16,10 @@
                 loginData["password"] = $("#password").val();
 
             var data = JSON.stringify(loginData);
+            alert(data);
+
             $.ajax({
-                type: "POST",
+                type: "GET",
                 contentType: "application/json;charset=utf-8",
                 url: "/user/login_validate",
                 data: data,
