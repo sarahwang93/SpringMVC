@@ -7,5 +7,5 @@ The project is composed by functions user registration, user login, dashboard vi
 
 * v1.0.2 Integration with PostgreSQL database and H2 database
 
-* v1.0.3 Update PostgreSQL database version sync up with new driver avability
+* v1.0.3 Update PostgreSQL database version sync up with new driver availability 
 
